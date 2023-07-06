@@ -13,11 +13,13 @@ const Tab = createBottomTabNavigator();
 
 export default function MyTabs() {
   return (
-    <NavigationContainer>
+    
      <Tab.Navigator
+    
       initialRouteName="Feed"
       screenOptions={{
         tabBarActiveTintColor: 'orange',
+        headerShown: false
       }}
     >
       <Tab.Screen
@@ -52,6 +54,6 @@ export default function MyTabs() {
         }}
       />
     </Tab.Navigator>
-    </NavigationContainer>
+  
   );
 };

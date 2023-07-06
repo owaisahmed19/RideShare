@@ -18,21 +18,7 @@ const LoginScreen = () => {
   const [password, setPassword] = useState('');
   const navigation = useNavigation();
 
-  useEffect(() => {
-    checkLoginStatus(); // Check if the user is already logged in on component mount
-  }, []);
-
-  const checkLoginStatus = async () => {
-    try {
-      const savedUsername = await AsyncStorage.getItem('username');
-      const savedPassword = await AsyncStorage.getItem('password');
-      if (savedUsername && savedPassword) {
-        navigation.replace('Home');
-      }
-    } catch (error) {
-      console.log('Error retrieving login info:', error);
-    }
-  };
+  
 
 
   const handleLogin = () => {
@@ -53,7 +39,7 @@ const LoginScreen = () => {
        }
        else{
         saveLoginInfo();
-        navigation.replace('Home');
+        navigation.replace('Dash');
         setUsername('');
         setPassword('');
        }
