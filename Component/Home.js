@@ -9,7 +9,7 @@ export default function App() {
   const navigation = useNavigation();
    const Handlepress=()=>{
       removeLoginInfo();
-      navigation.navigate('Login')
+      navigation.replace('Login')
     }
     const removeLoginInfo = async () => {
       try {

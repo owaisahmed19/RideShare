@@ -27,7 +27,7 @@ const LoginScreen = () => {
       const savedUsername = await AsyncStorage.getItem('username');
       const savedPassword = await AsyncStorage.getItem('password');
       if (savedUsername && savedPassword) {
-        navigation.navigate('Home');
+        navigation.replace('Home');
       }
     } catch (error) {
       console.log('Error retrieving login info:', error);
@@ -53,7 +53,7 @@ const LoginScreen = () => {
        }
        else{
         saveLoginInfo();
-        navigation.navigate('Home');
+        navigation.replace('Home');
         setUsername('');
         setPassword('');
        }
